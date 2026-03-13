@@ -125,7 +125,7 @@ export const photos: Photo[] = [
   {
     "id": "photo-6",
     "title": "Photo 6 - Highlands",
-    "image": "https://picsum.photos/id/106/1920/1280",
+    "image": "https://picsum.photos/id/136/1920/1280",
     "caption": "Captured during the Highlands series exploring natural light and form.",
     "project": "Highlands",
     "camera": "Fujifilm X-T4",

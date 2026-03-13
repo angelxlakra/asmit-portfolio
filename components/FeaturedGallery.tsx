@@ -17,6 +17,10 @@ export default function FeaturedGallery({ photos }: FeaturedGalleryProps) {
   const displayPhotos = photos.slice(0, 7);
 
   useEffect(() => {
+    console.log({displayPhotos});
+  }, [displayPhotos])
+
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     if (!containerRef.current || !pinRef.current) return;
@@ -148,51 +152,53 @@ export default function FeaturedGallery({ photos }: FeaturedGalleryProps) {
         {/* STAGE 2 CONTAINER */}
         <div className="stage-2 absolute inset-0 z-20 w-full h-full">
           {/* Stage 2 - Grid Lines */}
-          <div className="absolute top-[45%] left-0 w-full h-[1px] bg-stone-800/90 z-0" />
+          <div className="absolute top-[95%] left-0 w-full h-[1px] bg-stone-800/90 z-0" />
+          <div className="absolute top-[40%] left-0 w-full h-[1px] bg-stone-800/90 z-0" />
           <div className="absolute top-0 left-[65%] w-[1px] h-full bg-stone-800/90 z-0" />
+          <div className="absolute top-0 left-[85%] w-[1px] h-full bg-stone-800/90 z-0" />
 
           {/* Image 2: Top Left */}
-          <div className="absolute left-0 top-0 w-[65%] h-[45%]">
-             <div className="absolute bottom-0 right-30 w-[100%] h-[100%] bg-transparent z-10">
+          <div className="absolute left-2 top-[0%] w-[65%] h-[40%]">
+             <div className="absolute bottom-0 -right-30 w-[100%] h-[100%] bg-transparent z-10">
                <Image src={displayPhotos[1].image} alt={displayPhotos[1].title} fill className="object-contain" sizes="30vw" />
              </div>
-             <div className="absolute top-[5%] left-[65%] z-20">
-               <p className="font-mono text-[10px] text-stone-500 tracking-wider hidden md:block uppercase">
+             <div className="absolute top-[2%] left-[15%] z-20">
+               <p className="font-mono text-[10px] text-stone-300 tracking-wider hidden md:block uppercase">
                  {generateMetadata(displayPhotos[1])}
                </p>
              </div>
           </div>
 
           {/* Image 3: Bottom Left */}
-          <div className="absolute -left-0 top-[45%] w-[45%] h-[55%] bg-transparent z-10 ">
-            <Image src={displayPhotos[3].image} alt={displayPhotos[3].title} fill className="object-contain" sizes="45vw" />
-            <div className="absolute bottom-4 -right-10 z-20 px-2 py-1">
+          <div className="absolute left-10 top-[40%] w-[45%] h-[55%] bg-transparent z-10 ">
+            <Image src={displayPhotos[2].image} alt={displayPhotos[2].title} fill className="object-contain" sizes="45vw" />
+            <div className="absolute -bottom-7 right-0 z-20 px-2 py-1">
                <p className="font-mono text-[10px] text-stone-300 tracking-wider uppercase drop-shadow-md">
-                 {generateMetadata(displayPhotos[3])}
+                 {generateMetadata(displayPhotos[2])}
                </p>
             </div>
           </div>
 
           {/* Image 4: Bottom Right */}
-          <div className="absolute left-[65%] top-[45%] w-[35%] h-[55%] bg-transparent z-10">
-            <Image src={displayPhotos[2].image} alt={displayPhotos[2].title} fill className="object-cover" sizes="55vw" />
+          <div className="absolute left-[65%] top-[40%] w-[20%] h-[55%] bg-transparent z-10">
+            <Image src={displayPhotos[3].image} alt={displayPhotos[3].title} fill className="object-contain" sizes="55vw" />
           </div>
 
           {/* Empty Cell: Top Right (Contains metadata for Image 4) */}
-          <div className="absolute left-[65%] -top-5 w-[55%] h-[50%] p-6 flex flex-col justify-end z-10">
-             <p className="font-mono text-[10px] text-stone-500 tracking-wider hidden md:block uppercase">
-               {generateMetadata(displayPhotos[2])}
+          <div className="absolute left-[65%] -top-15 w-[55%] h-[50%] p-6 flex flex-col justify-end z-10">
+             <p className="font-mono text-[10px] text-stone-300 tracking-wider hidden md:block uppercase">
+               {generateMetadata(displayPhotos[3])}
              </p>
           </div>
         </div>
 
         {/* STAGE 3 CONTAINER */}
-        <div className="stage-3 absolute inset-0 z-20 w-full h-full hidden">
+        <div className="stage-3 absolute inset-0 z-20 w-full h-full">
           {/* Stage 3 - Grid Lines */}
-          <div className="absolute top-[50%] left-0 w-full h-[1px] bg-stone-800/60 z-0" />
-          <div className="absolute top-0 left-[55%] w-[1px] h-[50%] bg-stone-800/60 z-0" />
-          <div className="absolute top-[50%] left-[65%] w-[1px] h-[50%] bg-stone-800/60 z-0" />
-          <div className="absolute top-0 left-[65%] w-[1px] h-[50%] bg-stone-800/30 z-0" />
+          <div className="absolute top-[50%] left-0 w-full h-[1px] bg-stone-800/90 z-0" />
+          <div className="absolute top-0 left-[55%] w-[1px] h-[50%] bg-stone-800/90 z-0" />
+          <div className="absolute top-[50%] left-[65%] w-[1px] h-[50%] bg-stone-800/90 z-0" />
+          <div className="absolute top-0 left-[65%] w-[1px] h-[50%] bg-stone-800/90 z-0" />
 
           {/* Image 5: Top Left */}
           <div className="absolute left-0 top-0 w-[55%] h-[50%]">
